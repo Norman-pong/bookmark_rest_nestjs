@@ -18,21 +18,4 @@ export class AuthController {
     console.log({ dto });
     return this.authService.signin();
   }
-
-  @Post('signin2')
-  signin2(
-    @Body('email') email: string,
-    @Body('password') password: string,
-    @Body('age', ParseIntPipe) age: number,
-  ) {
-    console.log({
-      email,
-      typeOfEmail: typeof email,
-      password,
-      typeOfPassword: typeof password,
-      age,
-      typeOfAge: typeof age,
-    });
-    return this.authService.signin();
-  }
 }
